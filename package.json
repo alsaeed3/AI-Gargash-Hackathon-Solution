@@ -1,0 +1,37 @@
+{
+  "name": "ai-gargash-hackathon-solution",
+  "version": "1.0.0",
+  "description": "AI-Powered Car Sales Assistant for Gargash Group",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && node server.js",
+    "server:dev": "cd server && nodemon server.js",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alsaeed3/AI-Gargash-Hackathon-Solution.git"
+  },
+  "keywords": [
+    "ai",
+    "car",
+    "sales",
+    "assistant",
+    "gargash",
+    "chatbot",
+    "recommendation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alsaeed3/AI-Gargash-Hackathon-Solution/issues"
+  },
+  "homepage": "https://github.com/alsaeed3/AI-Gargash-Hackathon-Solution#readme",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

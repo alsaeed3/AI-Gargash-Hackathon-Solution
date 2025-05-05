@@ -1,0 +1,201 @@
+.page-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #212529;
+  text-align: center;
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 2.5rem;
+}
+
+.ai-assistant-page .card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ai-assistant-page .card-header {
+  background-color: #f8f9fa;
+  border-bottom: none;
+  padding: 1rem;
+}
+
+.chatbot-container {
+  height: 100%;
+}
+
+.chatbot-container .chatbot {
+  height: 100%;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.preferences-form {
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.preferences-form h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.preferences-form p {
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recommendations-section {
+  margin-top: 2rem;
+}
+
+.recommendations-section h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #212529;
+}
+
+.car-recommendation-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.car-recommendation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.car-recommendation-image {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+}
+
+.car-recommendation-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.car-recommendation-card:hover .car-recommendation-image img {
+  transform: scale(1.05);
+}
+
+.car-recommendation-tag {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: #007bff;
+  color: white;
+  padding: 0.2rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.car-recommendation-details {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.car-recommendation-details h4 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.car-recommendation-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.car-recommendation-info .year {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.car-recommendation-info .price {
+  font-weight: 700;
+  color: #007bff;
+  font-size: 1.1rem;
+}
+
+.car-recommendation-description {
+  color: #6c757d;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  flex-grow: 1;
+}
+
+.car-recommendation-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.empty-recommendations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #6c757d;
+}
+
+.empty-recommendations i {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: #adb5bd;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  color: #495057;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+  color: #007bff;
+  background-color: transparent;
+  border-bottom: 2px solid #007bff;
+}
+
+.card-header-tabs {
+  margin-bottom: -1rem;
+}
