@@ -1,9 +1,9 @@
-const { OpenAI } = require('openai');
+const OpenAI = require('openai');
 const Car = require('../models/Car');
 
-// Configure OpenAI client with direct API key
+// Initialize OpenAI client
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || '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'
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 // Process user query and generate AI response
@@ -65,9 +65,9 @@ exports.processQuery = async (req, res) => {
         ],
       },
     });
-  } catch (err) {
-    console.error('AI processing error:', err);
-    res.status(500).json({ success: false, error: 'AI processing failed' });
+  } catch (error) {
+    console.error('Error processing AI query:', error);
+    res.status(500).json({ success: false, error: 'Error processing your request' });
   }
 };
 

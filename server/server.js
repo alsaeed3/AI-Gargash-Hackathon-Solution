@@ -21,12 +21,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/gargash-ai-assistant')
-  .then(() => console.log('MongoDB connected successfully'))
-  .catch(err => {
-    console.error('MongoDB connection error:', err);
-    process.exit(1);
-  });
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/gargash-ai-assistant', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => {
+  console.log('MongoDB connection error:', err);
+  console.log('Continuing without database connection...');
+});
 
 // API Routes
 app.use('/api/cars', carRoutes);
