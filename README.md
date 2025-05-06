@@ -92,5 +92,9 @@ docker-compose up mongodb
 
 ## Contributors
 
-- [Your Name]
-- [Team Member Names]
+Team: BlueEdge
+- Ali Saeed
+- Ahmed Salem
+- Aarif
+- Mohammed Khedr
+- Simon
