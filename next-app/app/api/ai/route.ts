@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     await dbConnect();
 
     // Get current authenticated user if available
-    const currentUser = getCurrentUser();
+    const currentUser = await getCurrentUser();
     let userPreferences = null;
     
     if (currentUser || userId) {

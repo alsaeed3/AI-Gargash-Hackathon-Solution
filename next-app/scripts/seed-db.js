@@ -219,10 +219,10 @@ const cars = [
     horsepower: 335,
     features: ["Valcona leather", "Head-up display", "Matrix LED headlights", "Adaptive air suspension", "Bang & Olufsen sound system"],
     description: "The Audi A8 represents the pinnacle of Audi's technological capabilities and luxury features, delivering a refined driving experience with German engineering excellence.",
-    imageUrl: "https://images.unsplash.com/photo-1606664608504-8b0369dc1c0e?q=80&w=1000&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=1000&auto=format&fit=crop",
     additionalImages: [
-      "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=1000&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=1000&auto=format&fit=crop"
+      "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1617654112368-307b6150e198?q=80&w=1000&auto=format&fit=crop"
     ],
     availability: true,
     popularityScore: 7

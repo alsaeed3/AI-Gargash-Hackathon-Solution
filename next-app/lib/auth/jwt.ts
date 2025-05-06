@@ -26,7 +26,7 @@ export const verifyJwt = (token: string): TokenPayload | null => {
 };
 
 // Set JWT in a cookie
-export const setAuthCookie = (token: string): void => {
+export const setAuthCookie = async (token: string): Promise<void> => {
   cookies().set({
     name: 'authToken',
     value: token,
@@ -39,18 +39,18 @@ export const setAuthCookie = (token: string): void => {
 };
 
 // Get JWT from a cookie
-export const getAuthCookie = (): string | undefined => {
+export const getAuthCookie = async (): Promise<string | undefined> => {
   return cookies().get('authToken')?.value;
 };
 
 // Remove JWT cookie
-export const removeAuthCookie = (): void => {
+export const removeAuthCookie = async (): Promise<void> => {
   cookies().delete('authToken');
 };
 
 // Get current user from JWT token
-export const getCurrentUser = (): TokenPayload | null => {
-  const token = getAuthCookie();
+export const getCurrentUser = async (): Promise<TokenPayload | null> => {
+  const token = await getAuthCookie();
   if (!token) return null;
   
   return verifyJwt(token);
