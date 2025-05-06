@@ -1,77 +1,96 @@
-# AI Gargash Hackathon Solution
+# Gargash Motors AI Assistant - Hackathon Solution
 
-This project includes a React frontend and Express backend with MongoDB for the Gargash AI Hackathon.
+A Next.js application for Gargash Motors featuring an AI assistant for car recommendations and a luxury car showroom interface.
 
-## Prerequisites
+## Project Overview
 
-- [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+This project is a luxury car dealership web application with an integrated AI assistant built for the AI Gargash Hackathon. The application allows users to:
+- Browse luxury vehicles
+- Get AI-powered car recommendations
+- View detailed car information
+- Schedule test drives
+- Use an AI assistant for personalized help
+
+## Tech Stack
+
+- **Frontend**: Next.js, React, Tailwind CSS, shadcn/ui
+- **Backend**: Next.js API Routes
+- **Database**: MongoDB
+- **Authentication**: JWT
 
 ## Getting Started
 
-These instructions will get the project up and running on your local machine for development and testing purposes.
+### Prerequisites
 
-### Clone the Repository
+- Node.js (v18 or higher)
+- MongoDB (local instance or MongoDB Atlas)
 
-```bash
-git clone [your-repository-url]
-cd AI-Gargash-Hackathon-Solution
-```
+### Installation & Setup
 
-### Run with Docker Compose
-
-To start the application with MongoDB:
-
-```bash
-docker-compose up
-```
-
-This will:
-1. Start a MongoDB container
-2. Start the server (backend) container
-3. Start the client (frontend) container
-
-The application will be available at:
-- Frontend: http://localhost:3001
-- Backend API: http://localhost:5000
-- MongoDB: mongodb://localhost:27017
-
-### Run without Docker (Alternative)
-
-If you prefer to run the application without Docker:
-
-1. **Set up MongoDB**
-   - Install and start MongoDB on your machine
-   - Create a database named `gargash-ai-assistant`
-
-2. **Start the server**
+1. **Clone the repository**
    ```bash
-   cd server
-   npm install
-   npm start
+   git clone <repository-url>
+   cd AI-Gargash-Hackathon-Solution
    ```
 
-3. **Start the client**
+2. **Install dependencies**
    ```bash
-   cd client
+   cd next-app
    npm install
-   npm start
    ```
+
+3. **Environment Setup**
+   Create a `.env.local` file in the `next-app` directory with the following variables:
+   ```
+   MONGODB_URI=mongodb://localhost:27017/gargash-cars
+   JWT_SECRET=your-secret-key-should-be-in-env
+   ```
+
+4. **Seed the database**
+   ```bash
+   npm run seed
+   ```
+
+5. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+6. **Access the application**  
+   Open [http://localhost:3000](http://localhost:3000) in your browser
 
 ## Project Structure
 
-- `/client` - React frontend application
-- `/server` - Express backend application with MongoDB connection
+- `app/` - Next.js application routes and pages
+- `components/` - Reusable UI components
+- `lib/` - Utility functions, authentication, and database connection
+- `models/` - MongoDB schemas
+- `public/` - Static assets
+- `scripts/` - Database seeding scripts
 
-## API Endpoints
+## Key Features
 
-- `/api/cars` - Car information endpoints
-- `/api/ai` - AI assistant endpoints
-- `/api/appointments` - Test drive appointment endpoints
+- **AI Assistant**: Natural language interface for car recommendations
+- **Car Browsing**: Filter and view detailed information about luxury vehicles
+- **Responsive Design**: Works on mobile and desktop devices
+- **Test Drive Scheduling**: Book appointments to test drive vehicles
 
-## Environment Variables
+## MongoDB Setup
 
-You can customize the application using environment variables:
+You can either:
+1. Use a local MongoDB instance running on port 27017
+2. Use MongoDB Atlas by updating the MONGODB_URI in your .env.local file
 
-- `PORT` - Server port (default: 5000)
-- `MONGO_URI` - MongoDB connection string (default: mongodb://localhost:27017/gargash-ai-assistant)
+## Docker Support (Optional)
+
+For those who prefer Docker, you can use the Docker Compose file to run only the MongoDB service:
+
+```bash
+# Run only the MongoDB service
+docker-compose up mongodb
+```
+
+## Contributors
+
+- [Your Name]
+- [Team Member Names]

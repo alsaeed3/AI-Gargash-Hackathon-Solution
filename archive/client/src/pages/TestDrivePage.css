@@ -1,0 +1,180 @@
+.page-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #212529;
+  text-align: center;
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 2.5rem;
+}
+
+/* Selected Car Card Styles */
+.selected-car-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.selected-car-card:hover {
+  transform: translateY(-5px);
+}
+
+.selected-car-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.selected-car-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.selected-car-card:hover .selected-car-image img {
+  transform: scale(1.05);
+}
+
+.selected-car-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #007bff;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.selected-car-details {
+  padding: 1.5rem;
+}
+
+.selected-car-details h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.selected-car-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.selected-car-description {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.selected-car-features h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.selected-car-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.selected-car-features li {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.selected-car-features li i {
+  color: #28a745;
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+
+/* Booking Form Styles */
+.booking-form-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.booking-form-card h2 {
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #212529;
+}
+
+.booking-form label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.booking-form .form-control,
+.booking-form .form-select {
+  padding: 0.75rem;
+  border-color: #ced4da;
+  border-radius: 6px;
+}
+
+.booking-form .form-control:focus,
+.booking-form .form-select:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Success Message Styles */
+.success-message {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.success-icon {
+  font-size: 5rem;
+  color: #28a745;
+  margin-bottom: 2rem;
+}
+
+.success-message h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #212529;
+}
+
+.success-message .lead {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .selected-car-image {
+    height: 200px;
+  }
+  
+  .booking-form-card {
+    padding: 1.5rem;
+  }
+}
