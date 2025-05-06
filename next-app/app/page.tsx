@@ -117,7 +117,7 @@ export default function Home() {
                 <CardTitle>BMW 7 Series</CardTitle>
                 <CardDescription>Luxury sedan with advanced technology and comfort</CardDescription>
                 <div className="mt-2 flex justify-between text-sm">
-                  <span>Price: $85,000</span>
+                  <span>Price: AED {(85000 * 3.67).toLocaleString()}</span>
                   <span>2023</span>
                 </div>
               </CardContent>
@@ -141,7 +141,7 @@ export default function Home() {
                 <CardTitle>Mercedes-Benz S-Class</CardTitle>
                 <CardDescription>The pinnacle of luxury automotive engineering</CardDescription>
                 <div className="mt-2 flex justify-between text-sm">
-                  <span>Price: $95,000</span>
+                  <span>Price: AED {(95000 * 3.67).toLocaleString()}</span>
                   <span>2023</span>
                 </div>
               </CardContent>
@@ -165,7 +165,7 @@ export default function Home() {
                 <CardTitle>Porsche Cayenne</CardTitle>
                 <CardDescription>Sports car performance with SUV versatility</CardDescription>
                 <div className="mt-2 flex justify-between text-sm">
-                  <span>Price: $75,000</span>
+                  <span>Price: AED {(75000 * 3.67).toLocaleString()}</span>
                   <span>2023</span>
                 </div>
               </CardContent>
