@@ -89,7 +89,7 @@ export default async function CarDetailPage({ params }: Props) {
           <div className="space-y-6">
             <div>
               <h1 className="text-3xl font-bold">{car.year} {car.brand} {car.model}</h1>
-              <p className="text-xl font-semibold mt-2">${car.price.toLocaleString()}</p>
+              <p className="text-xl font-semibold mt-2">AED {Math.round(car.price * 3.67).toLocaleString()}</p>
             </div>
 
             <p className="text-neutral-700">{car.description}</p>

@@ -49,7 +49,7 @@ export default async function CarsPage() {
                 {car.description}
               </p>
               <div className="mt-2 flex items-baseline gap-1">
-                <span className="text-lg font-bold">${car.price.toLocaleString()}</span>
+                <span className="text-lg font-bold">AED {Math.round(car.price * 3.67).toLocaleString()}</span>
               </div>
               <div className="mt-3 flex flex-wrap gap-1">
                 {car.features.slice(0, 3).map((feature, i) => (
