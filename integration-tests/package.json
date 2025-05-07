@@ -1,0 +1,13 @@
+{
+  "name": "gargash-integration-tests",
+  "version": "1.0.0",
+  "description": "Integration tests for Gargash Motors application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "axios": "^1.6.2",
+    "jest": "^29.7.0"
+  }
+}

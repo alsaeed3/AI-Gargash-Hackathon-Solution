@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/gargash-cars';
+// Use mongodb service name from Docker Compose when running in Docker
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://mongodb:27017/gargash-cars';
 
 // Global is used here to maintain a cached connection across hot reloads
 // in development. This prevents connections growing exponentially
@@ -21,8 +22,13 @@ async function dbConnect() {
       bufferCommands: false,
     };
 
+    console.log(`Connecting to MongoDB at ${MONGODB_URI}...`);
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
+      console.log('Connected to MongoDB');
       return mongoose;
+    }).catch(err => {
+      console.error('MongoDB connection error:', err);
+      throw err;
     });
   }
   cached.conn = await cached.promise;

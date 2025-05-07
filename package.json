@@ -1,43 +1,17 @@
 {
-  "name": "gargash-motors-hackathon",
-  "private": true,
-  "workspaces": [
-    "next-app"
-  ],
+  "name": "gargash-motors",
   "version": "1.0.0",
-  "description": "AI-Powered Car Sales Assistant for Gargash Group",
-  "main": "index.js",
+  "description": "Gargash Motors Application",
   "scripts": {
-    "dev": "cd next-app && npm run dev",
-    "build": "cd next-app && npm run build",
-    "start": "cd next-app && npm run start",
-    "seed": "cd next-app && npm run seed",
-    "server": "cd server && node server.js",
-    "server:dev": "cd server && nodemon server.js",
-    "client": "cd client && npm start",
-    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:backend": "cd fastapi-backend && python -m pytest",
+    "test:frontend": "cd next-app && npm test",
+    "test:integration": "cd integration-tests && npm test",
+    "test": "npm run test:backend && npm run test:frontend && npm run test:integration",
+    "dev:backend": "cd fastapi-backend && ./start.sh",
+    "dev:frontend": "cd next-app && npm run dev",
+    "dev": "docker-compose up",
+    "setup": "npm install && cd next-app && npm install && cd ../integration-tests && npm install"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alsaeed3/AI-Gargash-Hackathon-Solution.git"
-  },
-  "keywords": [
-    "ai",
-    "car",
-    "sales",
-    "assistant",
-    "gargash",
-    "chatbot",
-    "recommendation"
-  ],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/alsaeed3/AI-Gargash-Hackathon-Solution/issues"
-  },
-  "homepage": "https://github.com/alsaeed3/AI-Gargash-Hackathon-Solution#readme",
-  "dependencies": {
-    "concurrently": "^8.2.2"
-  }
+  "license": "ISC"
 }

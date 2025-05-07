@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:no-checks": "node build-no-checks.js",
     "start": "next start",
     "lint": "next lint",
     "seed": "node scripts/seed-db.js"

@@ -11,5 +11,34 @@ services:
       - MONGO_INITDB_DATABASE=gargash-cars
     restart: unless-stopped
 
+  fastapi-backend:
+    build:
+      context: ./fastapi-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017
+      - DATABASE_NAME=gargash-cars
+    restart: unless-stopped
+    volumes:
+      - ./fastapi-backend:/app
+
+  next-frontend:
+    build:
+      context: ./next-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - fastapi-backend
+      - mongodb
+    environment:
+      - API_BASE_URL=http://fastapi-backend:8000/api
+      - MONGODB_URI=mongodb://mongodb:27017/gargash-cars
+    restart: unless-stopped
+
 volumes:
   mongodb_data:
