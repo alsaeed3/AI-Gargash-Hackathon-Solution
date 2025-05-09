@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server';
-import dbConnect from '@/lib/db/mongoose';
-import User from '@/models/User';
-import { signJwt, setAuthCookie } from '@/lib/auth/jwt';
+import { NextResponse } from "next/server";
+import dbConnect from "@/lib/db/mongoose";
+import User from "@/models/User";
+import { signJwt, setAuthCookie } from "@/lib/auth/jwt";
 
 export async function POST(request: Request) {
   try {
@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     // Validate required fields
     if (!name || !email) {
       return NextResponse.json(
-        { success: false, message: 'Name and email are required' },
+        { success: false, message: "Name and email are required" },
         { status: 400 }
       );
     }
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return NextResponse.json(
-        { success: false, message: 'User with this email already exists' },
+        { success: false, message: "User with this email already exists" },
         { status: 400 }
       );
     }
@@ -37,16 +37,16 @@ export async function POST(request: Request) {
         bodyTypes: [],
         priceRange: {},
         fuelTypes: [],
-        features: []
+        features: [],
       },
-      interactionHistory: []
+      interactionHistory: [],
     });
 
     // Generate JWT token
     const token = signJwt({
       userId: user._id.toString(),
       email: user.email,
-      name: user.name
+      name: user.name,
     });
 
     // Set the auth cookie
@@ -59,15 +59,17 @@ export async function POST(request: Request) {
           user: {
             id: user._id,
             name: user.name,
-            email: user.email
-          }
-        }
+            email: user.email,
+          },
+        },
       },
       { status: 201 }
     );
-  } catch (error: any) {
+  } catch (error: Error | unknown) {
+    const errorMessage =
+      error instanceof Error ? error.message : "An unknown error occurred";
     return NextResponse.json(
-      { success: false, message: error.message },
+      { success: false, message: errorMessage },
       { status: 500 }
     );
   }

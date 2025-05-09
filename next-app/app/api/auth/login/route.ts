@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server';
-import dbConnect from '@/lib/db/mongoose';
-import User from '@/models/User';
-import { signJwt, setAuthCookie } from '@/lib/auth/jwt';
+import { NextResponse } from "next/server";
+import dbConnect from "@/lib/db/mongoose";
+import User from "@/models/User";
+import { signJwt, setAuthCookie } from "@/lib/auth/jwt";
 
 export async function POST(request: Request) {
   try {
@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     // Validate email
     if (!email) {
       return NextResponse.json(
-        { success: false, message: 'Email is required' },
+        { success: false, message: "Email is required" },
         { status: 400 }
       );
     }
@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     const user = await User.findOne({ email });
     if (!user) {
       return NextResponse.json(
-        { success: false, message: 'User not found with this email' },
+        { success: false, message: "User not found with this email" },
         { status: 404 }
       );
     }
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
     const token = signJwt({
       userId: user._id.toString(),
       email: user.email,
-      name: user.name
+      name: user.name,
     });
 
     // Set the auth cookie
@@ -43,13 +43,15 @@ export async function POST(request: Request) {
         user: {
           id: user._id,
           name: user.name,
-          email: user.email
-        }
-      }
+          email: user.email,
+        },
+      },
     });
-  } catch (error: any) {
+  } catch (error: Error | unknown) {
+    const errorMessage =
+      error instanceof Error ? error.message : "An unknown error occurred";
     return NextResponse.json(
-      { success: false, message: error.message },
+      { success: false, message: errorMessage },
       { status: 500 }
     );
   }
